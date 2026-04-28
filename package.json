@@ -1,0 +1,17 @@
+{
+  "name": "skorify-backend",
+  "version": "1.0.0",
+  "description": "Backend service for Skorify platform",
+  "main": "server/index.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node server/index.js",
+    "test": "echo \"No tests configured\" && exit 0"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
