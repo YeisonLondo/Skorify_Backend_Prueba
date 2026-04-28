@@ -1,0 +1,33 @@
+{
+  "name": "@skorify/server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "nodemon",
+    "build": "tsc -p tsconfig.json && pnpm run copy-iraca && pnpm run copy-auth && pnpm run copy-libs && pnpm run copy-npmrc && pnpm run copy-package",
+    "copy-iraca": "copyfiles  src/iraca.config.json dist",
+    "copy-auth": "copyfiles -u 1 auth/**/* dist/auth",
+    "copy-libs": "copyfiles -u 1 libs/**/* dist/libs",
+    "copy-npmrc": "copyfiles .npmrc dist",
+    "copy-package": "copyfiles package.json dist",
+    "start:heroku": "node dist/src/index.js"
+  },
+  "dependencies": {
+    "@skorify/domain": "./libs/domain",
+    "@scifamek-open-source/iraca": "9.2.0",
+    "@scifamek-open-source/logger": "1.1.2"
+  },
+  "devDependencies": {
+    "@types/node": "22.5.0",
+    "nodemon": "3.1.10",
+    "ts-node": "10.9.2",
+    "typescript": "5.8.3",
+    "copyfiles": "^2.4.1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.22.0"
+}
